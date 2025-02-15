@@ -1,0 +1,54 @@
+SkillLink WordPress Development Journal
+
+Learning Activities & Resources
+
+This week, I worked on setting up the WordPress site for SkillLink using a minimal approach, avoiding page builders and relying on core WordPress functionality with only essential plugins. The primary focus was on structuring the site, implementing a call-to-action (CTA) button, and ensuring smooth navigation for users.
+
+Resources explored:
+- WordPress Theme Development Guide: [https://developer.wordpress.org/themes/](https://developer.wordpress.org/themes/)
+- WordPress Plugin Handbook: [https://developer.wordpress.org/plugins/](https://developer.wordpress.org/plugins/)
+- YouTube tutorials on creating a CTA button without page builders: [https://youtu.be/example](https://youtu.be/example)
+
+Plugins used:
+- Contact Form 7 (for form submissions)
+- Yoast SEO (for optimization)
+- WP Super Cache (for speed improvements)
+
+
+Estimated Hours
+- Research and learning: 3 hours
+- Implementation and testing: 5 hours
+- Debugging and refinement: 2 hours
+- Total: 10 hours
+
+
+
+Content Insights
+
+1. AI-Powered Career Recommendations 
+   - The AI recommendation system required structured content within WordPress to be properly indexed.
+   - Using a custom template allowed for better integration of AI-driven insights without relying on third-party page builders.
+   - Shortcodes and custom fields in WordPress made it easier to display dynamic career suggestions based on user input.
+
+2. Personalized Learning Paths 
+
+   - WordPress’s built-in categories and tags were used to organize learning resources, ensuring better content discoverability.
+   - The LearnPress plugin was considered but ultimately avoided to keep the setup lightweight.
+   - Custom post types helped create structured educational materials while maintaining flexibility for future updates.
+
+3. Mentor Connections for Career Growth  
+ 
+   - A simple registration form was created using Contact Form 7 to connect students with mentors.
+   - The form submissions were stored in the database, and a manual matchmaking process was established.
+   - Future plans include using a lightweight membership plugin to facilitate direct mentor-mentee interactions.
+
+
+Career/Employability/Learning Insights
+
+- Avoiding page builders encouraged a deeper understanding of WordPress’s core functionality, making the site more lightweight and optimized.
+- Custom themes provided greater control over design and performance compared to pre-built themes.
+- Debugging issues related to WordPress’s PHP functions improved my problem-solving skills and reinforced my understanding of backend development.
+- Managing plugins effectively ensured the site remained fast and secure without unnecessary bloat.
+- Learning through trial and error (implementing, testing, and refining) was more effective than simply watching tutorials.
+
+Overall, this experience reinforced the importance of balancing simplicity with functionality in WordPress development. The result can be viewed here: https://kingsleyskilllink.infinityfreeapp.com/
