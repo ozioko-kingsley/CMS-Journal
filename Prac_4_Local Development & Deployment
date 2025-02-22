@@ -1,0 +1,53 @@
+Learning Journal Entry: Setting Up SkillLink Locally
+Date: 21/02/2025
+Project: SkillLink – Local Development & Deployment
+
+
+Getting Started: The Excitement of a Fresh Setup
+Setting up the SkillLink application locally was an exciting challenge. From installing XAMPP to configuring the database, each step gave me a better understanding of how different technologies—HTML, CSS, JavaScript, PHP, and MySQL—come together to create a functional web application.
+I started with the basics: installing XAMPP and setting up a project folder in the htdocs directory. Once everything was in place, I was eager to see my first page load on http://localhost/3000/. That moment—seeing a simple HTML page displayed—was rewarding!
+
+
+Challenges Faced & How I Solved Them
+Database Connection Errors
+One of the initial roadblocks I faced was a database connection error. Every time I tried to register a user, I got the dreaded "Connection failed" message.
+ Solution:
+•	Checked config.php and realized I forgot to start MySQL in XAMPP.
+•	Fixed incorrect database credentials (forgot I named it skilllink_db but was using test_db in the code!).
+The moment I saw "Registration successful", I knew I had fixed the issue!
+
+
+Styling the Dashboard & Sidebar Navigation
+The CSS alignment of the dashboard was off—the sidebar was floating awkwardly, and the content wasn’t properly aligned. It took some trial and error to position everything correctly.
+ Solution:
+•	Used CSS Flexbox to align the sidebar neatly on the left.
+•	Adjusted the margin-left of the main content to prevent it from overlapping.
+•	Tweaked the user profile section so that the image and text aligned well.
+It was satisfying to see the final design come together in a clean, structured layout!
+
+
+Handling File Uploads for Profile Pictures
+Allowing users to upload profile images was another challenge. Initially, the images weren’t saving correctly. Either they weren’t uploading, or they weren’t displaying after upload.
+ Solution:
+•	Checked file permissions on the uploads/ folder.
+•	Ensured the image file type was being validated properly.
+•	Used move_uploaded_file() to correctly store the images in the designated folder.
+After these fixes, I successfully uploaded a profile picture, refreshed the dashboard, and—boom!—there it was, neatly displayed beside my user details.
+
+
+Biggest Takeaways & Lessons Learned
+Debugging is part of the journey – Every issue is a chance to learn and improve problem-solving skills.
+ A well-structured project folder makes life easier – Organizing files logically saved me so much time.
+ Testing regularly is key – Every time I implemented a new feature, I tested it immediately, catching issues early.
+
+
+Next Steps & Improvements
+Deploy SkillLink online – Move the project from localhost to a live server.
+Enhance the UI – Add smooth transitions and animations for a better user experience.
+ Improve security – Implement password reset, email verification, and better session handling.
+Setting up SkillLink was a fulfilling experience, filled with both struggles and victories. The feeling of fixing a bug after hours of debugging is priceless! Looking forward to deploying the project and seeing it go live. 
+
+
+Reflection:
+ "Every challenge faced during development is an opportunity to grow. Coding is all about patience, persistence, and passion!"
+
