@@ -1,0 +1,59 @@
+Learning Journal Entry: Creating an Astra Child Theme
+Date: 1st March 2025
+Project: Astra Child Theme Development
+Objective: To create a child theme for the Astra parent theme with at least six visible customizations, ensuring that updates to the parent theme do not affect my modifications.
+
+
+1. Overview:
+This week, I focused on building a child theme for the Astra theme in WordPress. The primary goal was to customize the website's appearance and functionality safely without altering the parent theme's files directly. The process involved creating essential files like style.css and functions.php and making visible changes such as modifying colors, typography, and layout.
+
+
+2. Key Learning Outcomes:
+a. Setting Up the Child Theme:
+•	Created a new folder named astra-child within the wp-content/themes directory.
+•	Added a style.css file with essential information, including:
+Css file
+/*
+Theme Name: Astra Child
+Template: astra
+*/
+
+•	Developed a functions.php file to enqueue the parent theme’s styles using:
+Php file
+
+<?php
+function astra_child_enqueue_styles() {
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+}
+add_action('wp_enqueue_scripts', 'astra_child_enqueue_styles');
+
+•	Activated the child theme successfully from the WordPress dashboard.
+
+
+b. Customizations Made:
+1.	Header Styling: Enhanced the header background color and added a shadow effect for a modern look.
+2.	Typography: Changed the default font and adjusted sizes for improved readability.
+3.	Button Styles: Customized button colors and hover effects to align with the brand’s identity.
+4.	Footer Customization: Added social media icons and adjusted padding for a cleaner layout.
+5.	Blog Layout: Improved the blog post grid layout for better content visibility.
+6.	Responsive Design: Ensured changes looked good across mobile and desktop views.
+
+
+c. Challenges Faced:
+•	CSS Overrides: Initially struggled with parent theme styles overriding my customizations. Solved it by using more specific selectors in style.css.
+•	Function Conflicts: Faced issues with certain PHP functions not executing. Fixed by ensuring functions were properly hooked using add_action().
+
+
+d. Key Takeaways:
+•	Child Themes Prevent Data Loss: Using a child theme was effective in retaining customizations during updates.
+•	Importance of Proper Enqueuing: Understanding how to enqueue parent styles helped avoid CSS conflicts.
+•	Selective Customization: Learning to focus on specific areas like typography and layout for noticeable improvements.
+
+
+3. Next Steps:
+•	Explore JavaScript customizations for more dynamic interactions.
+•	Implement additional CSS animations for a more engaging user experience.
+•	Document all customizations in a README file for future reference.
+
+
+Reflection: Building the Astra child theme was a great hands-on learning experience. It helped me understand the importance of maintaining a clean and update-safe customization approach in WordPress. Looking forward to diving deeper into theme development!
