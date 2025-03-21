@@ -1,0 +1,67 @@
+Learning Journal: PHP User Authentication System Implementation
+
+
+Project Overview
+For Prac 7 - PHP, we were required to create an original PHP project to demonstrate our understanding of PHP features and skills. Instead of following an existing tutorial, I developed a Simple User Authentication System with the following core functionalities:
+User Registration (Signup) – Allow users to create an account with a username, email, and password.
+
+User Login (Authentication) – Enable registered users to log in using their credentials. 
+
+User Dashboard (Protected Page after Login) – Restrict access to authorized users only.
+
+Logout Functionality – Allow users to securely log out of the system.
+
+Additionally, we forked and cloned "The Advice Shop" repository (https://github.com/lindsaymarkward/theadviceshop.git) to explore possible enhancements such as integrating authentication features.
+
+Implementation Steps
+
+1. Setting Up the Environment
+•	Installed a local server environment (XAMPP) for running PHP and MySQL.
+•	Created a project folder within htdocs for the PHP scripts.
+•	Set up a MySQL database and a users table for storing user credentials securely.
+
+
+2. Developing the PHP Scripts
+🔹 User Registration (signup.php)
+•	Created a form for users to enter their username, email, and password.
+•	Used PHP to validate input and check for duplicate email addresses.
+•	Stored user passwords securely using password_hash().
+
+🔹 User Login (login.php)
+•	Implemented a form for users to enter their credentials.
+•	Used PHP to verify email and password using password_verify().
+•	Started a session to maintain user authentication status.
+
+🔹 User Dashboard (dashboard.php)
+•	Restricted access to logged-in users using session verification.
+•	Displayed user-specific content after successful login.
+
+🔹 Logout Functionality (logout.php)
+•	Implemented session destruction to ensure users log out securely.
+
+Enhancing "The Advice Shop"
+
+To align with the optional enhancement, we considered integrating our authentication system into "The Advice Shop" by:
+•	Adding a login system to restrict certain pages to registered users.
+•	Enhancing the shopping experience by allowing user-specific recommendations.
+•	Improving session management for a more personalized user experience.
+
+Challenges and Solutions
+Challenge	Solution
+Handling password security	Used password_hash() and password_verify() for secure authentication.
+Managing session persistence	Implemented proper session management to maintain user login state.
+Preventing SQL injection	Used prepared statements in MySQL queries to enhance security.
+Integrating authentication into "The Advice Shop"	Explored modifying existing PHP code to support user login.
+
+Key Learnings
+Understanding PHP sessions and their role in user authentication.
+Securely handling user credentials using password hashing techniques.
+Implementing database interactions using prepared statements to prevent SQL injection.
+Exploring real-world PHP project structures by integrating authentication into "The Advice Shop."
+
+Conclusion & Next Steps
+This project provided a hands-on experience in implementing PHP authentication systems. Moving forward, we aim to:
+•	Expand the project by adding password reset functionality.
+•	Implement email verification for user accounts.
+•	Further integrate authentication into "The Advice Shop" to enhance the user experience.
+
