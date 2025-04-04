@@ -1,0 +1,143 @@
+Learning Journal Entry – Prac 9 (Sass & Automated Workflow)  
+
+ Overview of the Task  
+In this practical, I explored Sass (Syntactically Awesome Stylesheets) and set up an automated workflow using Gulp to compile SCSS into CSS. The main goal was to demonstrate key Sass features, including variables, nesting, mixins, and inheritance, while building a simple yet original webpage (not WordPress-based).  
+
+
+ Steps Taken & Implementation Details  
+
+ 1. Setting Up the Development Environment  
+To start, I created a structured project directory with the following setup:  
+
+
+/sass-project  
+ ├── scss/  
+ │   ├── _variables.scss  
+ │   ├── _mixins.scss  
+ │   ├── _base.scss  
+ │   ├── styles.scss  
+ ├── css/ (Compiled output)  
+ ├── index.html  
+ ├── gulpfile.js  
+ ├── package.json  
+
+
+- SCSS Folder: Contains modularized styles using partials (_variables.scss, _mixins.scss, _base.scss).  
+- CSS Folder: Stores the compiled CSS output.  
+- Gulp File: Automates the Sass compilation process.  
+- index.html: The main page to demonstrate styling.  
+
+
+ 2. Using Sass Features  
+
+Variables: Defined common colors, font sizes, and spacing in _variables.scss.  
+
+scss
+$primary-color: 3498db;
+$secondary-color: 2ecc71;
+$font-stack: 'Poppins', sans-serif;
+
+
+Nesting: Used nested selectors for better readability.  
+
+scss
+nav {
+  background: $primary-color;
+  ul {
+    list-style: none;
+    li {
+      display: inline-block;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+Mixins: Created reusable code blocks in _mixins.scss for responsive design.  
+
+scss
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+.container {
+  width: 80%;
+  @include mobile {
+    width: 100%;
+  }
+}
+
+
+Extend/Inheritance: Used @extend to apply shared styles.  
+
+scss
+%button-style {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.primary-button {
+  @extend %button-style;
+  background: $primary-color;
+  color: white;
+}
+
+
+ 3. Automating the Workflow with Gulp  
+To compile SCSS into CSS, I set up Gulp and installed the required dependencies:  
+
+bash
+npm init -y
+npm install gulp gulp-sass sass --save-dev
+
+
+In gulpfile.js, I created a task to compile SCSS automatically whenever a file is changed:  
+
+js
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+
+gulp.task('styles', () => {
+  return gulp.src('scss/styles.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('css'));
+});
+
+gulp.task('watch', () => {
+  gulp.watch('scss//.scss', gulp.series('styles'));
+});
+
+gulp.task('default', gulp.series('styles', 'watch'));
+
+
+ 4. Testing & Final Refinements  
+- Ran Gulp to compile SCSS into CSS: gulp  
+- Checked styles on the webpage (index.html)  
+- Made minor styling refinements and optimized responsiveness  
+
+
+ Challenges & Solutions
+|---------------------------------------------------------|---------------------------------------------------------------|
+| Challenge                                               | Solution                                                      |
+|---------------------------------------------------------|---------------------------------------------------------------|
+| Initial Gulp errors due to outdated dependencies        | Reinstalled with npm install and updated gulpfile.js syntax   |
+|---------------------------------------------------------|---------------------------------------------------------------|
+| Nested SCSS too deep in some cases                      | Simplified structure for readability                          |
+|---------------------------------------------------------|---------------------------------------------------------------|
+| Media queries not applying as expected                  | Used @content within the mixin properly                       |
+|---------------------------------------------------------|---------------------------------------------------------------|
+
+
+ Key Learnings & Takeaways  
+
+Sass makes styling modular, maintainable, and reusable.  
+Gulp automation saves time by instantly compiling SCSS.  
+Understanding mixins & extend helps reduce duplicate code.  
+A structured SCSS file system keeps the project organized and scalable.  
+
+
